@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "gallery": "作品展示",
+    "services": "服务项目",
+    "contact": "联系我们"
+  },
+  "home": {
+    "heroTitle": "Marrow Studio",
+    "heroSubtitle": "记录每一个幸福瞬间",
+    "cta": "了解更多"
+  },
+  "common": {
+    "language": "语言",
+    "switchLang": "English"
+  }
+}

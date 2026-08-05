@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "gallery": "Gallery",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Marrow Studio",
+    "heroSubtitle": "Capturing Every Happy Moment",
+    "cta": "Learn More"
+  },
+  "common": {
+    "language": "Language",
+    "switchLang": "中文"
+  }
+}
