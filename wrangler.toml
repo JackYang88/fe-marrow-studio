@@ -4,5 +4,6 @@
 name = "fe-marrow-studio"
 compatibility_date = "2024-01-01"
 
-# Pages 项目不需要 [site] 配置
-# 构建输出目录在 Cloudflare Dashboard 中配置
+# 静态资源目录配置
+[assets]
+directory = "./dist"
