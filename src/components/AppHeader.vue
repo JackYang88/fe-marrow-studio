@@ -68,7 +68,9 @@ function switchLocale() {
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: calc(18 * var(--unit));
+  line-height: 1.2;
+  letter-spacing: calc(2.7 * var(--unit));
   color: var(--color-text);
   transition: color var(--transition-fast);
   position: relative;

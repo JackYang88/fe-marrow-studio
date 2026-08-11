@@ -109,7 +109,7 @@ function closeSubmenu() {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 80px;
+  padding: 52px 80px;
   flex-shrink: 0;
   z-index: 10;
   color: #4D4D4D;
@@ -152,10 +152,10 @@ function closeSubmenu() {
 /* ===== 导航链接 ===== */
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: calc(18 * var(--unit));
+  line-height: 1.2;
+  letter-spacing: calc(2.7 * var(--unit));
   text-decoration: none;
-  letter-spacing: 0.1em;
   transition: color var(--transition-normal);
   white-space: nowrap;
   position: relative;

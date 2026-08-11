@@ -68,7 +68,7 @@ const { t } = useI18n()
           <!-- 右侧 -->
           <div class="section-two-right">
             <div class="right-text">
-              <p class="intro-title"><span>14</span> Best Bridal Designers in Asia</p>
+              <h2 class="intro-title"><span>14</span> Best Bridal Designers in Asia</h2>
               <p class="right-paragraph">{{ t('about.storyP4') }}</p>
               <p class="right-paragraph">{{ t('about.storyP5') }}</p>
             </div>
@@ -104,7 +104,7 @@ const { t } = useI18n()
 
 /* ===== 模块一：左侧文字 + 右侧 About 装饰 ===== */
 .about-section-one {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-4xl) 0;
 }
 
 .section-one-layout {
@@ -119,24 +119,29 @@ const { t } = useI18n()
 
 .intro-title {
   font-family: var(--font-script);
-  font-size: 2.5rem;
-  font-weight: 500;
   color: #639BCE;
-  letter-spacing: 0.1em;
   margin-bottom: var(--spacing-lg);
+  font-weight: 400;
+  font-size: calc(47.6266 * var(--unit));
+  line-height: 1;
+  letter-spacing: calc(2.38 * var(--unit));
+  white-space: nowrap;
 
   span {
-    font-size: 4rem;
-    font-weight: lighter;
+    font-size: calc(71 * var(--unit));
+    letter-spacing: 0;
+    -webkit-text-stroke: calc(1 * var(--unit)) var(--cream);
+    paint-order: fill stroke;
   }
 }
 
 .intro-paragraph {
   font-family: var(--font-sans);
-  font-size: 1rem;
   color: var(--color-text);
-  line-height: 2;
   margin-bottom: var(--spacing-lg);
+  font-size: calc(17 * var(--unit));
+  line-height: calc(25 * var(--unit));
+  letter-spacing: calc(1.36 * var(--unit));
 }
 
 .intro-paragraph:last-child {
@@ -156,11 +161,11 @@ const { t } = useI18n()
 .decor-about {
   width: 100%;
   font-family: var(--font-script);
-  font-size: clamp(5rem, 12vw, 4rem);
+  font-size: calc(117 * var(--unit));
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: 0.02em;
-  line-height: 0;
+  line-height: 0.6;
   text-orientation: mixed;
   text-align: end;
 }
@@ -185,7 +190,7 @@ const { t } = useI18n()
 
 .left-image {
   overflow: hidden;
-  padding: 200px 100px 0 0;
+  padding: 100px 100px 0 0;
 }
 
 .left-image img {
@@ -207,26 +212,25 @@ const { t } = useI18n()
 
 .contact-item {
   display: flex;
-  gap: 5px;
+  gap: 45px;
 }
 
 .contact-label {
-  width: 140px;
+  width: 75px;
   font-family: var(--font-script);
-  font-size: 1.56rem;
+  font-size: calc(25 * var(--unit));
   font-weight: 500;
   color: #639BCE;
-  letter-spacing: 0.2em;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .contact-value {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 300;
   color: var(--color-text);
-  letter-spacing: 0.1em;
-  line-height: 2.5;
+  font-size: calc(17 * var(--unit));
+  line-height: 1.5;
+  letter-spacing: calc(2.55 * var(--unit));
 }
 
 /* 右侧 */
@@ -244,10 +248,11 @@ const { t } = useI18n()
 
 .right-paragraph {
   font-family: var(--font-sans);
-  font-size: 1rem;
   color: var(--color-text-light);
-  line-height: 2;
   margin-bottom: var(--spacing-lg);
+  font-size: calc(17 * var(--unit));
+  line-height: calc(25 * var(--unit));
+  letter-spacing: calc(1.36 * var(--unit));
 }
 
 .right-image {
