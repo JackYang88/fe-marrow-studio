@@ -23,64 +23,75 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="home-page">
-  <section class="home">
-    <!-- 背景轮播 -->
-    <div class="carousel">
-      <transition-group name="carousel-fade">
-        <img
-          v-for="(slide, index) in slides"
-          :key="index"
-          v-show="currentSlide === index"
-          :src="slide"
-          class="carousel-slide"
-          alt=""
-        />
-      </transition-group>
-    </div>
+  <main class="home-page">
+    <section class="home-hero">
+      <AppNavBar overlay />
 
-    <!-- 导航栏（覆盖在图片上） -->
-    <AppNavBar overlay />
-  </section>
+      <div class="home-carousel">
+        <transition-group name="carousel-fade">
+          <img
+            v-for="(slide, index) in slides"
+            :key="index"
+            v-show="currentSlide === index"
+            :src="slide"
+            class="home-slide"
+            :class="[`home-slide--${index + 1}`, { 'is-active': currentSlide === index }]"
+            alt=""
+          />
+        </transition-group>
+      </div>
+    </section>
 
-  <!-- 后续内容块在此处追加，例如：-->
-  <!-- <section class="home-section">...</section> -->
-
-  <!-- Footer（独立白色背景） -->
-  <AppFooter theme="light" />
-  </div>
+    <AppFooter theme="light" />
+  </main>
 </template>
 
 <style scoped>
-/* ===== 页面容器（支持滚动追加内容） ===== */
+/* ===== 页面容器 ===== */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-.home {
+/* ===== 首屏区域（高度由轮播图自适应撑开） ===== */
+.home-hero {
   position: relative;
-  flex-shrink: 0;
+  background: var(--cream);
 }
 
-/* ===== 轮播 ===== */
-.carousel {
+/* ===== 轮播容器 ===== */
+.home-carousel {
   position: relative;
   width: 100%;
-  z-index: 0;
 }
 
-.carousel-slide {
+/* ===== 轮播图片 ===== */
+.home-slide {
   display: block;
   width: 100%;
   height: auto;
+  margin: 0;
+}
+
+/* 当前激活的图片：在文档流中，撑开容器高度 */
+.home-slide.is-active {
+  position: relative;
+}
+
+/* 非激活图片：绝对定位叠放，不影响容器高度 */
+.home-slide:not(.is-active) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* 轮播过渡 */
 .carousel-fade-enter-active,
 .carousel-fade-leave-active {
-  transition: opacity 1.2s ease;
+  transition: opacity 900ms ease;
 }
 
 .carousel-fade-enter-from,
@@ -93,92 +104,10 @@ onUnmounted(() => {
   width: 100%;
 }
 
-/* ===== 内容 ===== */
-/* .home-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #fff;
-  padding: var(--spacing-2xl);
-} */
-
-.home-title {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.1;
-}
-
-.title-script {
-  font-family: var(--font-script);
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: 0.02em;
-}
-
-.title-sans {
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.home-subtitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-lg);
-}
-
-.home-divider {
-  width: 60px;
-  height: 1px;
-  background: var(--color-primary-light);
-  margin: 0 auto var(--spacing-lg);
-}
-
-.home-desc {
-  font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.05em;
-  line-height: 1.8;
-  max-width: 500px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-.home-cta {
-  display: inline-block;
-  padding: 14px 48px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  transition: all var(--transition-normal);
-  text-decoration: none;
-}
-
-.home-cta:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #fff;
-  transform: translateY(-2px);
-}
-
 /* ===== 响应式 ===== */
 @media (max-width: 767px) {
-  .home-title {
-    flex-direction: column;
-    gap: 4px;
+  .home-slide:not(.is-active) {
+    object-position: 50% 42%;
   }
 }
 </style>

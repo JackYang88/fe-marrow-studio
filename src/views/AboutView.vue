@@ -9,292 +9,324 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="about-page">
-    <!-- 导航栏 -->
+  <main class="about-page">
     <AppNavBar />
 
-    <!-- 模块一：左侧文字 + 右侧 About 装饰 -->
-    <section class="about-section-one">
-      <div class="section-container">
-        <div class="section-one-layout">
-          <div class="section-one-text">
-            <p class="intro-title">Designer introduction</p>
-            <p class="intro-paragraph">{{ t('about.storyP1') }}</p>
-            <p class="intro-paragraph">{{ t('about.storyP2') }}</p>
-            <p class="intro-paragraph">{{ t('about.storyP3') }}</p>
-          </div>
-          <div class="section-one-decor">
-            <span class="decor-about">About</span>
-            <div class="spacer"></div>
-          </div>
+    <section class="about-stage">
+      <!-- 模块一：Designer introduction 标题 -->
+      <h2 class="about-designer-title">Designer introduction</h2>
+
+      <!-- 模块一：设计师介绍文字 -->
+      <div class="designer-copy">
+        <p>{{ t('about.storyP1') }}</p>
+        <p>{{ t('about.storyP2') }}</p>
+        <p>{{ t('about.storyP3') }}</p>
+      </div>
+
+      <!-- 模块一：About 装饰文字 -->
+      <span class="about-title">About</span>
+
+      <!-- 模块二：左侧人像 -->
+      <div class="about-portrait">
+        <img :src="about1" alt="Designer portrait" />
+      </div>
+
+      <!-- 模块二：右侧 Press 标题 -->
+      <h2 class="press-introduction">
+        <span>14</span> Best Bridal Designers in Asia
+      </h2>
+
+      <!-- 模块二：右侧 Press 文字 -->
+      <div class="press-copy">
+        <p>{{ t('about.storyP4') }}</p>
+        <p>{{ t('about.storyP5') }}</p>
+      </div>
+
+      <!-- 模块二：右侧工作室图片 -->
+      <div class="about-studio">
+        <img :src="about2" alt="Studio" />
+      </div>
+
+      <!-- 联系方式 -->
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Rednote :</span>
+          <span class="contact-value">{{ t('about.rednote') }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Instagram :</span>
+          <span class="contact-value">{{ t('about.instagram') }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email :</span>
+          <span class="contact-value">{{ t('about.email') }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Tel :</span>
+          <span class="contact-value">{{ t('about.tel') }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Address :</span>
+          <span class="contact-value">{{ t('about.address') }}</span>
         </div>
       </div>
     </section>
 
-    <!-- 模块二：左侧（图片+联系信息）/ 右侧（文字+图片） -->
-    <section class="about-section-two">
-      <div class="section-container">
-        <div class="section-two-layout">
-          <!-- 左侧 -->
-          <div class="section-two-left">
-            <div class="left-image">
-              <img :src="about1" alt="About 1" />
-            </div>
-            <div class="spacer"></div> 
-            <div class="left-contact">
-              <div class="contact-item">
-                <span class="contact-label">Rednote :</span>
-                <span class="contact-value">{{ t('about.rednote') }}</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-label">Instagram :</span>
-                <span class="contact-value">{{ t('about.instagram') }}</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-label">Email :</span>
-                <span class="contact-value">{{ t('about.email') }}</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-label">Tel :</span>
-                <span class="contact-value">{{ t('about.tel') }}</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-label">Address :</span>
-                <span class="contact-value">{{ t('about.address') }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 右侧 -->
-          <div class="section-two-right">
-            <div class="right-text">
-              <h2 class="intro-title"><span>14</span> Best Bridal Designers in Asia</h2>
-              <p class="right-paragraph">{{ t('about.storyP4') }}</p>
-              <p class="right-paragraph">{{ t('about.storyP5') }}</p>
-            </div>
-            <div class="right-image">
-              <img :src="about2" alt="About 2" />
-            </div>
-            <div class="spacer"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <AppFooter theme="transparent" />
-  </div>
+  </main>
 </template>
 
 <style scoped>
 /* ===== 页面容器 ===== */
 .about-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #fffdf2;
-}
-
-/* ===== 通用容器 ===== */
-.section-container {
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
   width: 100%;
+  overflow: hidden;
+  background: var(--cream);
 }
 
-/* ===== 模块一：左侧文字 + 右侧 About 装饰 ===== */
-.about-section-one {
-  padding: var(--spacing-4xl) 0;
+/* ===== 舞台：固定高度，所有子元素绝对定位 ===== */
+.about-stage {
+  height: calc(2394.3 * var(--unit));
+  background: var(--cream);
 }
 
-.section-one-layout {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-5xl);
-}
-
-.section-one-text {
-  flex: 1;
-}
-
-.intro-title {
+/* ===== 模块一：Designer introduction 标题 ===== */
+.about-designer-title {
+  position: absolute;
+  top: calc(244 * var(--unit));
+  left: calc(112.2 * var(--unit));
   font-family: var(--font-script);
-  color: #639BCE;
-  margin-bottom: var(--spacing-lg);
-  font-weight: 400;
   font-size: calc(47.6266 * var(--unit));
+  font-weight: 400;
+  color: var(--blue);
   line-height: 1;
   letter-spacing: calc(2.38 * var(--unit));
   white-space: nowrap;
-
-  span {
-    font-size: calc(71 * var(--unit));
-    letter-spacing: 0;
-    -webkit-text-stroke: calc(1 * var(--unit)) var(--cream);
-    paint-order: fill stroke;
-  }
+  margin: 0;
 }
 
-.intro-paragraph {
+/* ===== 模块一：设计师介绍文字 ===== */
+.designer-copy {
+  position: absolute;
+  top: calc(317.9 * var(--unit));
+  left: calc(114.9 * var(--unit));
+  width: calc(688 * var(--unit));
+}
+
+.designer-copy p {
   font-family: var(--font-sans);
-  color: var(--color-text);
-  margin-bottom: var(--spacing-lg);
   font-size: calc(17 * var(--unit));
   line-height: calc(25 * var(--unit));
   letter-spacing: calc(1.36 * var(--unit));
+  color: var(--color-text);
+  margin: 0 0 calc(24 * var(--unit)) 0;
 }
 
-.intro-paragraph:last-child {
+.designer-copy p:last-child {
   margin-bottom: 0;
 }
 
-.section-one-decor {
-  width: 50%;
-  height: 400px;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.decor-about {
-  width: 100%;
+/* ===== 模块一：About 装饰文字 ===== */
+.about-title {
+  position: absolute;
+  top: calc(260 * var(--unit));
+  left: calc(1542.9 * var(--unit));
   font-family: var(--font-script);
   font-size: calc(117 * var(--unit));
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: 0.02em;
   line-height: 0.6;
-  text-orientation: mixed;
-  text-align: end;
+  margin: 0;
 }
 
-/* ===== 模块二 ===== */
-.about-section-two {
-  padding: 0 0 var(--spacing-4xl);
+/* ===== 模块二：左侧人像 ===== */
+.about-portrait {
+  position: absolute;
+  top: calc(948.21 * var(--unit));
+  left: calc(107.24 * var(--unit));
+  width: calc(677 * var(--unit));
 }
 
-.section-two-layout {
-  display: flex;
-  gap: var(--spacing-5xl);
-}
-
-/* 左侧 */
-.section-two-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-}
-
-.left-image {
-  overflow: hidden;
-  padding: 100px 100px 0 0;
-}
-
-.left-image img {
+.about-portrait img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
 }
 
-.spacer {
-  flex: 1;
+/* ===== 模块二：右侧 Press 标题 ===== */
+.press-introduction {
+  position: absolute;
+  top: calc(739.5 * var(--unit));
+  left: calc(1074.96 * var(--unit));
+  font-family: var(--font-script);
+  font-size: calc(47.6266 * var(--unit));
+  font-weight: 400;
+  color: var(--blue);
+  line-height: 1;
+  letter-spacing: calc(2.38 * var(--unit));
+  white-space: nowrap;
+  margin: 0;
 }
 
-.left-contact {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
+.press-introduction span {
+  font-size: calc(71 * var(--unit));
+  letter-spacing: 0;
+  -webkit-text-stroke: calc(1 * var(--unit)) var(--cream);
+  paint-order: fill stroke;
+}
+
+/* ===== 模块二：右侧 Press 文字 ===== */
+.press-copy {
+  position: absolute;
+  top: calc(816 * var(--unit));
+  left: calc(1074.5 * var(--unit));
+  width: calc(575 * var(--unit));
+}
+
+.press-copy p {
+  font-family: var(--font-sans);
+  font-size: calc(17 * var(--unit));
+  line-height: calc(25 * var(--unit));
+  letter-spacing: calc(1.36 * var(--unit));
+  color: var(--color-text-light);
+  margin: 0 0 calc(24 * var(--unit)) 0;
+}
+
+.press-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== 模块二：右侧工作室图片 ===== */
+.about-studio {
+  position: absolute;
+  top: calc(1212.24 * var(--unit));
+  left: calc(1074.73 * var(--unit));
+  width: calc(729.6 * var(--unit));
+}
+
+.about-studio img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== 联系方式 ===== */
+.contact-list {
+  position: absolute;
+  top: calc(1950 * var(--unit));
+  left: calc(115.2 * var(--unit));
+  width: calc(780 * var(--unit));
 }
 
 .contact-item {
   display: flex;
-  gap: 45px;
+  gap: calc(45 * var(--unit));
+  margin-bottom: calc(45 * var(--unit));
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
 }
 
 .contact-label {
-  width: 75px;
+  width: calc(85 * var(--unit));
   font-family: var(--font-script);
   font-size: calc(25 * var(--unit));
   font-weight: 500;
-  color: #639BCE;
+  color: var(--blue);
   flex-shrink: 0;
   line-height: 1;
 }
 
 .contact-value {
   font-family: var(--font-sans);
-  color: var(--color-text);
   font-size: calc(17 * var(--unit));
+  color: var(--color-text);
   line-height: 1.5;
   letter-spacing: calc(2.55 * var(--unit));
 }
 
-/* 右侧 */
-.section-two-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-}
-
-.right-text {
-  flex: 1;
-  padding-right: 6.5rem;
-}
-
-.right-paragraph {
-  font-family: var(--font-sans);
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-lg);
-  font-size: calc(17 * var(--unit));
-  line-height: calc(25 * var(--unit));
-  letter-spacing: calc(1.36 * var(--unit));
-}
-
-.right-image {
-  overflow: hidden;
-}
-
-.right-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-sm);
-}
-
-/* ===== 响应式 ===== */
+/* ===== 响应式：移动端切换为 flex 布局 ===== */
 @media (max-width: 767px) {
-  .section-one-layout {
+  .about-stage {
+    height: auto;
+    position: static;
+    display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    padding: calc(80 * var(--unit)) calc(40 * var(--unit));
+    gap: calc(48 * var(--unit));
   }
 
-  .decor-about {
-    writing-mode: horizontal-tb;
-    font-size: clamp(4rem, 10vw, 6rem);
+  .about-designer-title,
+  .designer-copy,
+  .about-title,
+  .about-portrait,
+  .press-introduction,
+  .press-copy,
+  .about-studio,
+  .contact-list {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
   }
 
-  .section-two-layout {
+  .about-designer-title {
+    font-size: 1.75rem;
+  }
+
+  .designer-copy {
+    width: 100%;
+  }
+
+  .designer-copy p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about-title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .about-portrait {
+    width: 100%;
+  }
+
+  .press-introduction {
+    font-size: 1.75rem;
+  }
+
+  .press-copy {
+    width: 100%;
+  }
+
+  .press-copy p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about-studio {
+    width: 100%;
+  }
+
+  .contact-list {
+    width: 100%;
+  }
+
+  .contact-item {
     flex-direction: column;
-    gap: var(--spacing-xl);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .section-one-layout {
-    gap: var(--spacing-xl);
+    gap: 4px;
   }
 
-  .section-two-layout {
-    gap: var(--spacing-xl);
+  .contact-label {
+    width: auto;
+    font-size: 1.1rem;
   }
 
-  .decor-about {
-    font-size: clamp(4rem, 8vw, 7rem);
+  .contact-value {
+    font-size: 0.9rem;
   }
 }
 </style>

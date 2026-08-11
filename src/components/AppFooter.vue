@@ -22,17 +22,11 @@ defineProps({
 
 <style scoped>
 .app-footer {
+  position: relative;
   flex-shrink: 0;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 80px;
+  height: calc(97.7 * var(--unit));
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
   color: var(--color-text-light);
-  margin-top: auto;
 }
 
 /* 主题变体 */
@@ -45,23 +39,39 @@ defineProps({
 }
 
 .footer-copyright {
-  font-size: 0.94rem;
+  position: absolute;
+  top: calc(39.9 * var(--unit));
+  left: calc(103.8 * var(--unit));
+  font-size: calc(17 * var(--unit));
   font-weight: 300;
+  letter-spacing: calc(1.36 * var(--unit));
 }
 
 .footer-brand {
-  width: 3.7rem;
+  position: absolute;
+  top: calc(42.4 * var(--unit));
+  right: calc(130.4 * var(--unit));
+  width: calc(76.8 * var(--unit));
 }
 
 /* ===== 响应式 ===== */
 @media (max-width: 767px) {
   .app-footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0 24px;
+  }
+
+  .footer-copyright {
+    position: static;
     font-size: 0.75rem;
   }
 
   .footer-brand {
-    font-size: 0.85rem;
+    position: static;
+    width: 3rem;
   }
 }
 </style>
