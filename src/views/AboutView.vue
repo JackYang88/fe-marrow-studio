@@ -43,10 +43,6 @@ const { t } = useI18n()
             <div class="spacer"></div> 
             <div class="left-contact">
               <div class="contact-item">
-                <span class="contact-label">Address :</span>
-                <span class="contact-value">{{ t('about.address') }}</span>
-              </div>
-              <div class="contact-item">
                 <span class="contact-label">Rednote :</span>
                 <span class="contact-value">{{ t('about.rednote') }}</span>
               </div>
@@ -61,6 +57,10 @@ const { t } = useI18n()
               <div class="contact-item">
                 <span class="contact-label">Tel :</span>
                 <span class="contact-value">{{ t('about.tel') }}</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Address :</span>
+                <span class="contact-value">{{ t('about.address') }}</span>
               </div>
             </div>
           </div>
@@ -126,7 +126,8 @@ const { t } = useI18n()
   margin-bottom: var(--spacing-lg);
 
   span {
-    font-size: 4.4rem;
+    font-size: 4rem;
+    font-weight: lighter;
   }
 }
 
@@ -134,7 +135,7 @@ const { t } = useI18n()
   font-family: var(--font-sans);
   font-size: 1rem;
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: 2;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -159,7 +160,7 @@ const { t } = useI18n()
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: 0.02em;
-  line-height: 0.9;
+  line-height: 0;
   text-orientation: mixed;
   text-align: end;
 }
@@ -171,7 +172,7 @@ const { t } = useI18n()
 
 .section-two-layout {
   display: flex;
-  gap: var(--spacing-4xl);
+  gap: var(--spacing-5xl);
 }
 
 /* 左侧 */
@@ -216,6 +217,7 @@ const { t } = useI18n()
   font-weight: 500;
   color: #639BCE;
   letter-spacing: 0.2em;
+  flex-shrink: 0;
 }
 
 .contact-value {
@@ -224,7 +226,7 @@ const { t } = useI18n()
   font-weight: 300;
   color: var(--color-text);
   letter-spacing: 0.1em;
-  line-height: 2.4;
+  line-height: 2.5;
 }
 
 /* 右侧 */
@@ -244,7 +246,7 @@ const { t } = useI18n()
   font-family: var(--font-sans);
   font-size: 1rem;
   color: var(--color-text-light);
-  line-height: 1.5;
+  line-height: 2;
   margin-bottom: var(--spacing-lg);
 }
 
