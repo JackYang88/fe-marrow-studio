@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
 
+import './styles/fonts.css'
 import './styles/variables.css'
 import './styles/reset.css'
 import './styles/responsive.css'

@@ -18,6 +18,7 @@
     --container-padding: 16px;
     --spacing-3xl: 48px;
     --spacing-4xl: 64px;
+    --spacing-5xl: 128px;
   }
 
   .hide-mobile {

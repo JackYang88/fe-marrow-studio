@@ -3,7 +3,7 @@
   --color-primary: #c9a96e;
   --color-primary-light: #dfc393;
   --color-primary-dark: #a8863f;
-  --color-text: #333333;
+  --color-text: #4D4D4D;
   --color-text-light: #666666;
   --color-text-muted: #999999;
   --color-bg: #ffffff;
@@ -12,8 +12,10 @@
   --color-border: #e8e0d4;
 
   /* Typography */
-  --font-heading: 'Playfair Display', 'Noto Serif SC', serif;
-  --font-body: 'Inter', 'Noto Sans SC', sans-serif;
+  --font-heading: 'LuxuriousScript', cursive;
+  --font-body: 'OPPO Sans', 'Noto Sans SC', sans-serif;
+  --font-script: 'LuxuriousScript', cursive;
+  --font-sans: 'OPPO Sans', 'Noto Sans SC', sans-serif;
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -24,10 +26,11 @@
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
   --spacing-4xl: 96px;
+  --spacing-5xl: 128px;
 
   /* Container */
-  --container-max-width: 1200px;
-  --container-padding: 20px;
+  --container-max-width: 1670px;
+  --container-padding: 80px;
 
   /* Border Radius */
   --radius-sm: 4px;

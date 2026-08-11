@@ -1,0 +1,17 @@
+/* OPPO Sans 4.0 - 黑体 */
+@font-face {
+  font-family: 'OPPO Sans';
+  src: url('../assets/fonts/OPPO Sans 4.0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* LuxuriousScript - 花体 */
+@font-face {
+  font-family: 'LuxuriousScript';
+  src: url('../assets/fonts/LuxuriousScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

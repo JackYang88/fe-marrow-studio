@@ -1,57 +1,66 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
+defineProps({
+  /**
+   * 主题模式：
+   * - 'light' — 白色背景（默认，适用于 Home 等页面）
+   * - 'transparent' — 透明背景，继承父元素背景色（适用于 About 等页面）
+   */
+  theme: {
+    type: String,
+    default: 'light',
+    validator: (v) => ['light', 'transparent'].includes(v),
+  },
+})
 </script>
 
 <template>
-  <footer class="app-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">Marrow Studio</span>
-        <p class="footer-desc">{{ t('home.heroSubtitle') }}</p>
-      </div>
-      <div class="footer-copyright">
-        &copy; {{ new Date().getFullYear() }} Marrow Studio. All rights reserved.
-      </div>
-    </div>
+  <footer :class="['app-footer', `app-footer--${theme}`]">
+    <span class="footer-copyright">&copy; 2026 - Marrow</span>
+    <img src="../assets/images/logo.png" alt="Marrow Logo" class="footer-brand" />
   </footer>
 </template>
 
 <style scoped>
 .app-footer {
-  background: var(--color-bg-dark);
-  color: rgba(255, 255, 255, 0.7);
-  padding: var(--spacing-2xl) 0;
-}
-
-.footer-inner {
+  flex-shrink: 0;
+  height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  justify-content: space-between;
+  padding: 0 80px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  margin-top: auto;
 }
 
-.footer-logo {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  color: var(--color-primary-light);
+/* 主题变体 */
+.app-footer--light {
+  background: #fff;
 }
 
-.footer-desc {
-  font-size: 0.85rem;
-  margin-top: var(--spacing-xs);
+.app-footer--transparent {
+  background: transparent;
 }
 
 .footer-copyright {
-  font-size: 0.8rem;
+  font-weight: 300;
 }
 
+.footer-brand {
+  width: 55px;
+}
+
+/* ===== 响应式 ===== */
 @media (max-width: 767px) {
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
+  .app-footer {
+    padding: 0 24px;
+    font-size: 0.75rem;
+  }
+
+  .footer-brand {
+    font-size: 0.85rem;
   }
 }
 </style>

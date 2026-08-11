@@ -9,7 +9,22 @@
   "home": {
     "heroTitle": "Marrow Studio",
     "heroSubtitle": "Capturing Every Happy Moment",
+    "heroDesc": "Capturing light and shadow with the lens, telling stories through imagery, making every frame an eternal memory",
     "cta": "Learn More"
+  },
+  "about": {
+    "bannerSubtitle": "Writing poems of light and shadow through the lens",
+    "storyTitle": "Our Story",
+    "storyP1": "Marrow Tang, 90s designer,She earned her Master's degree in Fashion Designfrom Beijing Institute of Fashion Technology. Her evening gown design wasshortlisted for the 2014 ARTS OF FASHION Prize by the American Fashion ArtsFoundation. In 2016, she founded the bridal design brand Marrow in Chengdu.",
+    "storyP2": "In 2019, Marrow was selected for the bridal wear segment of ShanghaiInternational Fashion Week. At the same year, Marrow received the AnnualCraftsmanship Brand Award in China's wedding fashion industry from COSMOBRIDE magazine. She loves vintage and modren multiculture at the same time,Combining retro culture and fashion design with her imagination . Each seriesunfolds like a vivid and charming movie story.",
+    "storyP3": "In 2025, Marrow was recognized by THE WED, the world-renowned weddingmagazine website, as one of the 20 Next-Gen Bridal Designers You Need onYour Radar.n 2026, Marrow was named one of Asia's 14 Best Bridal Designerby THE WED.",
+    "storyP4": "Marrow Tang has always been drawn to the space where pastand present blur. Since launching her Chengdu-based namesakelabel in 2016, the designer has built a bridal world shaped bymulticultural references, retro sensibility, and a quietly moderneye - collections that evoke another era without being costumedby it. With an emphasis on natural comfort, impeccable tailoring,and luxurious fabrics, each piece by Marrow feels thoughtfullycomposed yet effortlessly wearable.",
+    "storyP5": "From THE WED",
+    "address": "1-2,Building2,U37CreativePark, JinjiangDistrict,Chengdu.China",
+    "rednote": "蔓若Marrow",
+    "instagram": "marrowbridal",
+    "email": "marrowbridal@126.com",
+    "tel": "+8615281064451"
   },
   "common": {
     "language": "Language",

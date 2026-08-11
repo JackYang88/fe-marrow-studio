@@ -11,6 +11,12 @@ const routes = [
         name: 'Home',
         component: () => import('../views/HomeView.vue'),
         meta: { title: 'Marrow Studio' }
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('../views/AboutView.vue'),
+        meta: { title: 'About - Marrow Studio' }
       }
     ]
   }
