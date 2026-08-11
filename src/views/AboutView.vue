@@ -68,7 +68,7 @@ const { t } = useI18n()
           <!-- 右侧 -->
           <div class="section-two-right">
             <div class="right-text">
-              <p class="intro-title">14 Best Bridal Designers in Asia</p>
+              <p class="intro-title"><span>14</span> Best Bridal Designers in Asia</p>
               <p class="right-paragraph">{{ t('about.storyP4') }}</p>
               <p class="right-paragraph">{{ t('about.storyP5') }}</p>
             </div>
@@ -124,11 +124,15 @@ const { t } = useI18n()
   color: #639BCE;
   letter-spacing: 0.1em;
   margin-bottom: var(--spacing-lg);
+
+  span {
+    font-size: 4.4rem;
+  }
 }
 
 .intro-paragraph {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.5;
   margin-bottom: var(--spacing-lg);
@@ -151,7 +155,7 @@ const { t } = useI18n()
 .decor-about {
   width: 100%;
   font-family: var(--font-script);
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(5rem, 12vw, 4rem);
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -167,7 +171,7 @@ const { t } = useI18n()
 
 .section-two-layout {
   display: flex;
-  gap: var(--spacing-5xl);
+  gap: var(--spacing-4xl);
 }
 
 /* 左侧 */
@@ -206,9 +210,9 @@ const { t } = useI18n()
 }
 
 .contact-label {
-  width: 105px;
+  width: 140px;
   font-family: var(--font-script);
-  font-size: 1.2rem;
+  font-size: 1.56rem;
   font-weight: 500;
   color: #639BCE;
   letter-spacing: 0.2em;
@@ -216,11 +220,11 @@ const { t } = useI18n()
 
 .contact-value {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
-  color: var(--color-text-light);
-  letter-spacing: 0.15em;
-  line-height: 2;
+  color: var(--color-text);
+  letter-spacing: 0.1em;
+  line-height: 2.4;
 }
 
 /* 右侧 */
@@ -233,12 +237,12 @@ const { t } = useI18n()
 
 .right-text {
   flex: 1;
-  padding-right: 10rem;
+  padding-right: 6.5rem;
 }
 
 .right-paragraph {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text-light);
   line-height: 1.5;
   margin-bottom: var(--spacing-lg);

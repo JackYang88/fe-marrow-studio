@@ -28,13 +28,14 @@ onUnmounted(() => {
     <!-- 背景轮播 -->
     <div class="carousel">
       <transition-group name="carousel-fade">
-        <div
+        <img
           v-for="(slide, index) in slides"
           :key="index"
           v-show="currentSlide === index"
+          :src="slide"
           class="carousel-slide"
-          :style="{ backgroundImage: `url(${slide})` }"
-        ></div>
+          alt=""
+        />
       </transition-group>
     </div>
 
@@ -60,27 +61,20 @@ onUnmounted(() => {
 
 .home {
   position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   flex-shrink: 0;
 }
 
 /* ===== 轮播 ===== */
 .carousel {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
   z-index: 0;
 }
 
 .carousel-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* 轮播过渡 */
@@ -96,6 +90,7 @@ onUnmounted(() => {
 
 .carousel-fade-leave-active {
   position: absolute;
+  width: 100%;
 }
 
 /* ===== 内容 ===== */

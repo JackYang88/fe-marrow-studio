@@ -146,20 +146,20 @@ function closeSubmenu() {
 
 /* ===== Logo ===== */
 .logo {
-  width: 95px;
+  width: 6.25rem;
 }
 
 /* ===== 导航链接 ===== */
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   font-weight: 400;
   text-decoration: none;
   letter-spacing: 0.1em;
   transition: color var(--transition-normal);
   white-space: nowrap;
   position: relative;
-  padding-bottom: 4px;
+  padding-bottom: 7px;
   color: var(--color-text);
 }
 

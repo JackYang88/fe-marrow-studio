@@ -23,7 +23,7 @@ defineProps({
 <style scoped>
 .app-footer {
   flex-shrink: 0;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,11 +45,12 @@ defineProps({
 }
 
 .footer-copyright {
+  font-size: 0.94rem;
   font-weight: 300;
 }
 
 .footer-brand {
-  width: 55px;
+  width: 3.7rem;
 }
 
 /* ===== 响应式 ===== */
