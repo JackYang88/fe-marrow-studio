@@ -43,23 +43,23 @@ const { t } = useI18n()
             <div class="spacer"></div> 
             <div class="left-contact">
               <div class="contact-item">
-                <span class="contact-label">Address:</span>
+                <span class="contact-label">Address :</span>
                 <span class="contact-value">{{ t('about.address') }}</span>
               </div>
               <div class="contact-item">
-                <span class="contact-label">Rednote:</span>
+                <span class="contact-label">Rednote :</span>
                 <span class="contact-value">{{ t('about.rednote') }}</span>
               </div>
               <div class="contact-item">
-                <span class="contact-label">Instagram:</span>
+                <span class="contact-label">Instagram :</span>
                 <span class="contact-value">{{ t('about.instagram') }}</span>
               </div>
               <div class="contact-item">
-                <span class="contact-label">Email:</span>
+                <span class="contact-label">Email :</span>
                 <span class="contact-value">{{ t('about.email') }}</span>
               </div>
               <div class="contact-item">
-                <span class="contact-label">Tel:</span>
+                <span class="contact-label">Tel :</span>
                 <span class="contact-value">{{ t('about.tel') }}</span>
               </div>
             </div>
@@ -119,11 +119,10 @@ const { t } = useI18n()
 
 .intro-title {
   font-family: var(--font-script);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: #639BCE;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -156,7 +155,7 @@ const { t } = useI18n()
   font-weight: 400;
   color: var(--color-text);
   letter-spacing: 0.02em;
-  line-height: 0.8;
+  line-height: 0.9;
   text-orientation: mixed;
   text-align: end;
 }
@@ -203,17 +202,16 @@ const { t } = useI18n()
 
 .contact-item {
   display: flex;
-  gap: 40px;
+  gap: 5px;
 }
 
 .contact-label {
-  width: 85px;
+  width: 105px;
   font-family: var(--font-script);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #639BCE;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 .contact-value {
@@ -221,8 +219,8 @@ const { t } = useI18n()
   font-size: 0.9rem;
   font-weight: 300;
   color: var(--color-text-light);
-  letter-spacing: 0.03em;
-  line-height: 1.6;
+  letter-spacing: 0.15em;
+  line-height: 2;
 }
 
 /* 右侧 */
@@ -235,7 +233,7 @@ const { t } = useI18n()
 
 .right-text {
   flex: 1;
-  padding-right: 180px;
+  padding-right: 10rem;
 }
 
 .right-paragraph {

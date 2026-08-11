@@ -10,13 +10,13 @@ const routes = [
         path: '',
         name: 'Home',
         component: () => import('../views/HomeView.vue'),
-        meta: { title: 'Marrow Studio' }
+        meta: { title: 'Marrow' }
       },
       {
         path: 'about',
         name: 'About',
         component: () => import('../views/AboutView.vue'),
-        meta: { title: 'About - Marrow Studio' }
+        meta: { title: 'Marrow' }
       }
     ]
   }
@@ -31,7 +31,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  document.title = to.meta.title || 'Marrow Studio'
+  document.title = to.meta.title || 'Marrow'
 })
 
 export default router

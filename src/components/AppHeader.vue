@@ -17,7 +17,7 @@ function switchLocale() {
   <header class="app-header">
     <div class="container header-inner">
       <router-link to="/" class="logo">
-        Marrow Studio
+        Marrow
       </router-link>
 
       <nav class="nav">
