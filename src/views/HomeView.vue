@@ -57,6 +57,8 @@ onUnmounted(() => {
 .home-hero {
   position: relative;
   background: var(--cream);
+  /* 防止图片加载前容器高度塌陷导致 footer 闪烁到顶部 */
+  min-height: 100svh;
 }
 
 /* ===== 轮播容器 ===== */
