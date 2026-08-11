@@ -156,7 +156,6 @@ function closeSubmenu() {
   font-weight: 400;
   text-decoration: none;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   transition: color var(--transition-normal);
   white-space: nowrap;
   position: relative;
